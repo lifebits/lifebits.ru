@@ -1,0 +1,27 @@
+.kineticScroll {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  cursor: -webkit-grab;
+  white-space: nowrap;
+  background: transparent;
+
+  li {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+.kinetic-energy {
+  /*easeOutExpo*/
+  transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+// Пока не используется, нужно для будущего центрирования элемента
+.return-back {
+  /*easeOutQuart*/
+  -webkit-transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}

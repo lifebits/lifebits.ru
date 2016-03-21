@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700&subset=latin,cyrillic);
+
+.wrap-uxModel {
+  position: relative;
+  top: 0;
+  width: 100%;
+  //transform: translateY(-50%);
+
+  .uxModel {
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+
+    .mainLine {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 14px;
+      margin-top: -7px;
+      background: linear-gradient(90deg, #9e9e9e 50%,#bbbbbb 50%);
+      background-size: 0.2em;
+    }
+
+    .modelSection {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      width: 16.66%;
+    }
+
+    @import "./cellByHome.scss";
+  }
+
+  .uxModel-description {
+    display: none;
+  }
+}
+
+
+
+
+
+
+

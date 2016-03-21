@@ -1,0 +1,14 @@
+- each list in lists
+    //- var aaa = require("./cardInfo/asur.jade") list.groupName
+    ul.groupCard
+        - each item, i in list.items
+            li.kineticElement.invisible
+                div.img-wrap
+                    img(src=require("../../img/projects/" + locals.itemsDir + item))
+                    - if (i==0)
+                        - if (list.listName == "asur")
+                            include cardInfo/asur
+                        - if (list.listName == "mafon")
+                            include cardInfo/mafon
+                        - if (list.listName == "moro")
+                            include cardInfo/moro

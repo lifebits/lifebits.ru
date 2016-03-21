@@ -1,0 +1,67 @@
+@import "../../css/media.scss";
+
+.footer-wrap {
+  position: relative;
+  //height: 60px;
+  //line-height: 60px;
+  background-color: #333333;
+}
+
+footer {
+  font-size: 0.9em;
+  color: #cccccc;
+
+  .column {
+    @include mobile {
+      display: block;
+      width: 100% !important;
+      text-align: center !important;
+    }
+  }
+
+  .leftPart {
+    text-align: left;
+    line-height: 60px;
+
+    p {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1.25;
+    }
+  }
+
+  .centerPart {
+    line-height: 60px;
+    text-align: center;
+
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 4px;
+      line-height: 100%;
+
+      svg {
+        fill: #FFFFFF;
+      }
+    }
+
+    a:hover svg {
+      fill: #33C3F0;
+    }
+  }
+
+  .rightPart {
+    text-align: right;
+    line-height: 60px;
+
+    @include mobile {
+      display: none;
+    }
+
+    p {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1.25;
+    }
+  }
+}

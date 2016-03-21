@@ -1,0 +1,153 @@
+.wrap-cells {
+  $primary-color: #FFFFFF;
+  $content-color: #000000;
+
+  $cell-hover-color: #026689;
+
+  $widthCell: 54px;
+  $heightCell: 90px;
+
+  $fullWidthCell: $widthCell*2;
+  $fullHeightCell: $heightCell;
+
+  $ratioContentSize: 0.89;
+
+  $widthCellContent: floor(($widthCell)*$ratioContentSize);
+  $heightCellContent: floor(($heightCell)*$ratioContentSize);
+
+  $cellBorderWidth: floor(($heightCell - $heightCellContent)/2);
+
+  position: absolute;
+  width: $fullWidthCell;
+  height: $fullHeightCell;
+  //margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .cell {
+    position: absolute;
+    //left: $widthCell/2;
+    width: $widthCell;
+    height: $heightCell;
+    background: $primary-color;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -$widthCell/2;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-top: $heightCell/2 solid transparent;
+      border-right: $widthCell/2 solid $primary-color;
+      border-bottom: $heightCell/2 solid transparent;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -$widthCell/2;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-top: $heightCell/2 solid transparent;
+      border-left: $widthCell/2 solid $primary-color;
+      border-bottom: $heightCell/2 solid transparent;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      top: $cellBorderWidth;
+      margin: 0 auto;
+      width: $widthCellContent;
+      height: $heightCellContent;
+      background: $content-color;
+      //transform: translate(-50%, -50%);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -(floor($widthCellContent/2));
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: $heightCellContent/2 solid transparent;
+        border-right: $widthCellContent/2 solid $content-color;
+        border-bottom: $heightCellContent/2 solid transparent;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: -(floor($widthCellContent/2));
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: $heightCellContent/2 solid transparent;
+        border-left: $widthCellContent/2 solid $content-color;
+        border-bottom: $heightCellContent/2 solid transparent;
+      }
+
+      span {
+        z-index: 10;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        line-height: 1.3;
+        font-size: 0.7em;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        color: #FFFFFF;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+  }
+
+  .cell:nth-child(1) {
+    left: $widthCell/2;
+  }
+
+  .cell:nth-child(2) {
+    left: $widthCell/2 + $fullWidthCell - ($widthCell/2)-$cellBorderWidth;
+    top: $fullHeightCell/2-$cellBorderWidth/2;
+  }
+
+  .cell:nth-child(3) {
+    left: $widthCell/2 + $fullWidthCell - ($widthCell/2)-$cellBorderWidth;
+    top: -($fullHeightCell/2-$cellBorderWidth/2);
+  }
+
+  .cell:nth-child(4) {
+    left: $widthCell/2 - $fullWidthCell + ($widthCell/2)+$cellBorderWidth;
+    top: -($fullHeightCell/2-$cellBorderWidth/2);
+  }
+
+  .cell:nth-child(5) {
+    left: $widthCell/2 - $fullWidthCell + ($widthCell/2)+$cellBorderWidth;
+    top: $fullHeightCell/2-$cellBorderWidth/2;
+  }
+
+  .cell:nth-child(6) {
+    left: $widthCell/2;
+    top: $fullHeightCell - $cellBorderWidth;
+  }
+
+  .cell:nth-child(7) {
+    left: $widthCell/2;
+    top: -($fullHeightCell - $cellBorderWidth);
+  }
+
+  .cell:nth-child(8) {
+    left: $widthCell/2 + $fullWidthCell + $widthCell - $cellBorderWidth*2;
+  }
+
+  .cell:nth-child(9) {
+    left: $widthCell/2 - $fullWidthCell - $widthCell + $cellBorderWidth*2
+  }
+
+}

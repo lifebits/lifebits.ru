@@ -1,0 +1,205 @@
+.wrap-cellDescription {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 76px;
+    font-size: 1.3em;
+    text-align: left;
+  }
+
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 18px;
+
+    @import "cell-logo";
+  }
+
+  .btn-close {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    top: 12px;
+    right: 20px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(0deg);
+      transform-origin: 50% 50%;
+      transition: all 400ms cubic-bezier(.165,.84,.44,1);
+    }
+
+    &:hover svg {
+      cursor: pointer;
+      transform: rotate(90deg);
+    }
+  }
+
+  .contentSide{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 100%;
+
+    &.leftSide {
+      background-color: #161616;
+
+      @import "cell-white";
+    }
+
+    &.rightSide {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      background-color: #FFFFFF;
+    }
+  }
+
+  .title {
+    position: relative;
+    width: 100%;
+  }
+
+  .descriptionBlock {
+    padding: 10px 20px;
+    line-height: 1.3;
+
+    ul {
+      margin-left: 20px;
+      list-style: square;
+    }
+  }
+
+  .idf0Model {
+    position: relative;
+    width: 500px;
+    margin: 20px auto;
+
+    .arrow {
+      position: absolute;
+      height: 2px;
+      background-color: #333333;
+
+      &::before {
+        content: '';
+        position: absolute;
+        right: -1px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8px 0 8px 16px;
+        border-color: transparent transparent transparent #333333;
+        transform: translateY(-7px);
+      }
+
+      &.right {
+        top: 50%;
+        width: 30%;
+        margin-top: -1px;
+      }
+
+      &.bottom {
+        width: 40px;
+        bottom: 28px;
+        left: 50%;
+        margin-left: -21px;
+        transform: rotate(90deg);
+      }
+
+      &.top {
+        width: 40px;
+        top: 28px;
+        left: 50%;
+        margin-left: -21px;
+        transform: rotate(270deg);
+      }
+    }
+
+    .note {
+      position: absolute;
+      font-size: 14px;
+
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+      }
+    }
+
+    .controlSection, .mechanismSection {
+      position: relative;
+      width: 100%;
+      height: 72px;
+
+      .note {
+        left: 50%;
+        margin-left: -80px;
+        width: 170px;
+        height: 20px;
+        text-align: center;
+        //background-color: #b4b472;
+      }
+    }
+
+    .controlSection {
+
+      .note {
+        top: 0;
+      }
+
+    }
+
+    .mechanismSection {
+
+      .note {
+        bottom: 0;
+      }
+    }
+
+    .inputSection, .outputSection {
+      position: absolute;
+      top: 0;
+      width: 206px;
+      height: 100%;
+
+      .note {
+        top: 50%;
+        margin-top: -30px;
+        width: 66%;
+        height: 60px;
+        line-height: 60px;
+      }
+    }
+
+    .inputSection {
+      left: 0;
+
+      .note {
+        left: 0;
+        text-align: right;
+      }
+    }
+
+    .outputSection {
+      right: 0;
+
+      .note {
+        right: 0;
+        text-align: left;
+      }
+    }
+
+    @import "cell-idf0";
+
+  }
+
+
+}

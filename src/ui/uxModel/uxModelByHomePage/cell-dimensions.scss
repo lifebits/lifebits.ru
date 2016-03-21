@@ -1,0 +1,72 @@
+.cell {
+  width: $widthCell;
+  height: $heightCell;
+  background: $primary-color;
+
+  &::before {
+    left: -$widthCell/2;
+    border-top: $heightCell/2 solid transparent;
+    border-right: $widthCell/2 solid $primary-color;
+    border-bottom: $heightCell/2 solid transparent;
+  }
+
+  &::after {
+    right: -$widthCell/2;
+    border-top: $heightCell/2 solid transparent;
+    border-left: $widthCell/2 solid $primary-color;
+    border-bottom: $heightCell/2 solid transparent;
+  }
+
+  &:hover {
+    background-color: $cell-hover-color;
+
+    &::before {
+      border-right-color: $cell-hover-color;
+    }
+
+    &::after {
+      border-left-color: $cell-hover-color;
+    }
+
+  }
+
+  .content {
+    top: $cellBorderWidth;
+    width: $widthCellContent;
+    height: $heightCellContent;
+    background: $content-color;
+
+    &::before {
+      left: -(floor($widthCellContent/2));
+      border-top: $heightCellContent/2 solid transparent;
+      border-right: $widthCellContent/2 solid $content-color;
+      border-bottom: $heightCellContent/2 solid transparent;
+    }
+
+    &::after {
+      right: -(floor($widthCellContent/2));
+      border-top: $heightCellContent/2 solid transparent;
+      border-left: $widthCellContent/2 solid $content-color;
+      border-bottom: $heightCellContent/2 solid transparent;
+    }
+
+    span {
+      width: $fullWidthCell - $cellBorderWidth*4;
+    }
+  }
+
+}
+
+.cell:nth-child(1) {
+  left: $widthCell/2;
+}
+
+.cell:nth-child(2) {
+  left: $widthCell/2 + $fullWidthCell - ($widthCell/2)-$cellBorderWidth;
+  top: $fullHeightCell/2-$cellBorderWidth/2;
+}
+
+.cell:nth-child(3) {
+  left: $widthCell/2 + $fullWidthCell - ($widthCell/2)-$cellBorderWidth;
+  top: -($fullHeightCell/2-$cellBorderWidth/2);
+}

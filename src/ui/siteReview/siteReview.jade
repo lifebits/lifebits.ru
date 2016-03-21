@@ -1,0 +1,23 @@
+div.siteReview
+    nav.img-scroll-nav
+        div.thumb-nav
+            div.line.invisible
+        ul
+            - each item, i in locals.scrollItems
+                - if (i==0)
+                    li.invisible.active(data-value=item.translateValue)= item.name
+                - else
+                    li.invisible(data-value=item.translateValue)= item.name
+
+    div.img-scroll
+        div.fake-browser-tools
+            div.dots
+                span
+                span
+                span
+            div.input
+                a(href="http://evostone.ru")= locals.urlSite
+        div.img-scroll-inc
+            img(src=require("../../img/sites/" + locals.imgName))
+
+

@@ -1,0 +1,22 @@
+section.uxModel
+    div.mainLine
+
+    - each item in locals
+        div.modelSection
+            div.wrap-cells
+
+                - each cell in item.cells
+                    a.cell.invisible(data-cell-id=cell.id)
+                        div.content
+                            span= cell.name
+
+
+
+section.uxModel-description
+
+    - each item in locals
+        div.descriptionSection.invisible
+            div.head
+                span= item.responsibility
+            div.body
+                span= item.description

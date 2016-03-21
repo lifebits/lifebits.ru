@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700&subset=latin,cyrillic);
+@import "./media.scss";
+
+html, body {
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: #222;
+  background: #FFFFFF;
+
+  &.scrollFalse {
+    position: fixed;
+    overflow: hidden;
+  }
+
+  @include oldDesktop {
+    font-size: 94%;
+  }
+
+  @include mobile {
+    font-size: 94%;
+  }
+}
+
+H2 {
+  padding: 30px 0;
+  line-height: 1.2;
+  font-size: 1.8em;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include mobile {
+    padding: 20px 0;
+    font-size: 1.3em;
+    text-align: left;
+  }
+}
+
+H3 {
+  padding-bottom: 20px;
+  font-size: 1.4em;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+H4 {
+  padding-bottom: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-align: left;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.content-wrap {
+  padding-top: 120px;
+  padding-bottom: 50px;
+
+  @include oldDesktop {
+    padding-top: 150px;
+  }
+
+  @include mobile {
+    padding-top: 100px;
+    padding-bottom: 30px;
+  }
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.column.c50 {
+  width: 50%;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.column.c40 {
+  width: 40%;
+}
+
+.column.c20 {
+  width: 20%;
+}
+
+.button {
+  display: inline-block;
+  min-width: 100px;
+  padding: 12px 20px;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFF;
+  background-color: #33C3F0;
+  border-radius: 4px;
+}

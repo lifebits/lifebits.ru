@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css?family=Leckerli+One);
+@import "../../css/media.scss";
+
+.header-wrap {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #cccccc;
+
+  header {
+    position: relative;
+    margin-top: 22px;
+    padding-bottom: 30px;
+
+    @include oldDesktop {
+      padding-bottom: 50px;
+    }
+
+    @include mobile {
+      padding-bottom: 22px;
+    }
+  }
+
+  .btn-mobileNavOpen {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  .wrap-logo {
+    display: inline-block;
+    vertical-align: top;
+
+    @include oldDesktop {
+      display: block;
+      text-align: center;
+    }
+
+    @include mobile {
+      display: block;
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-block;
+      font-family: 'Leckerli One', cursive;
+
+      span {
+        display: inline-block;
+        position: relative;
+        font-size: 1.9em;
+      }
+    }
+
+    .tagline {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      top: 7px;
+      left: 20px;
+      font-size: 0.8em;
+      font-weight: 600;
+      font-style: italic;;
+    }
+  }
+
+  nav {
+    position: relative;
+    top: 10px;
+    line-height: 1;
+    color: #000000;
+
+    @include desktop {
+      float: right;
+    }
+
+    @include oldDesktop {
+      top: 20px;
+      text-align: center;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    li {
+      display: inline-block;
+      margin-left: 17px;
+      font-size: 1.1em;
+      font-weight: 600;
+      font-style: italic;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      a {
+        position: relative;
+        padding-bottom: 6px;
+
+        &:hover {
+          color: #555555;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 3px;
+          bottom: 0;
+          left: 0;
+          background-color: #333;
+        }
+
+        &.active {
+          &::after {
+            width: 100%;
+            background-color: #E82C0C;
+            transition: all 260ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          }
+          &:hover {
+            color: #000000;
+          }
+        }
+      }
+
+    }
+  }
+
+}

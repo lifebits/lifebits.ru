@@ -1,0 +1,131 @@
+@import "./media.scss";
+
+#intro {
+  box-sizing: border-box;
+
+  padding-left: 30px;
+  line-height: 1.5;
+  border-left: 2px solid #000;
+
+  @include mobile {
+    width: 100%;
+    padding-left: 20px;
+    border-left: 4px solid #ff6347;
+  }
+
+  h1 {
+    display: inline;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #000;
+  }
+
+  p {
+    display: inline;
+    font-size: 1.1em;
+    color: #333;
+  }
+}
+
+#ux {
+  margin-top: 20px;
+  line-height: 1.4;
+
+  p {
+    padding-bottom: 16px;
+    font-size: 1.0em;
+  }
+
+  ul {
+    margin: 10px 0 16px 40px;
+    list-style: square;
+  }
+
+  section.container-uxModel {
+    width: 100%;
+    padding: 60px 0 80px;
+
+    @include mobile {
+      display: none;
+    }
+
+    .uxModel-description {
+      display: none;
+    }
+  }
+}
+
+#ux-additional {
+  display: none;
+
+  p {
+    padding-bottom: 16px;
+    line-height: 1.4;
+    font-size: 1.0em;
+  }
+}
+
+#webApp {
+  position: relative;
+  margin-top: 60px;
+  width: 100%;
+  min-height: 200px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+#basicSkills {
+  margin-top: 80px;
+
+  ul {
+    box-sizing: border-box;
+    //padding: 10px 0 16px 20px;
+    padding-left: 20px;
+    line-height: 1.8;
+    list-style: square;
+  }
+
+  p {
+    padding-bottom: 18px;
+    line-height: 1.5;
+  }
+
+  .basicSkills-main {
+    .column:nth-child(3) {
+      @include mobile {
+        margin-top: 10px;
+      }
+    }
+  }
+  
+  .basicSkills-second {
+    @include mobile {
+      margin-top: 30px;
+    }
+  }
+
+  .additionalInfo {
+    padding: 18px 0;
+    line-height: 1.4;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+}
+
+#siteDevelopment {
+  position: relative;
+  margin-top: 20px;
+  min-height: 200px;
+}
+
+#wrap-branding {
+  position: relative;
+  margin-top: 40px;
+
+  p {
+    padding-bottom: 16px;
+    line-height: 1.4;
+    font-size: 1.0em;
+  }
+}

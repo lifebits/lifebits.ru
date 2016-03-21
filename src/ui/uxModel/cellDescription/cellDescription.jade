@@ -1,0 +1,72 @@
+section.contentSide.leftSide
+    div.wrap-cells
+        - each item in locals.incCells
+            div.cell.invisible
+                div.content
+                    span= item
+
+section.contentSide.rightSide
+    div.title
+        div.logo
+            div.wrap-cells
+                div.cell
+                div.cell
+                div.cell
+        H2= locals.title
+
+    - if (locals.shortDescription)
+        div.descriptionBlock
+            span= locals.shortDescription
+
+    - if (locals.userNeeds)
+        div.descriptionBlock
+            h4 Цели посетителя
+            span= locals.userNeeds
+
+    - if (locals.businessNeeds)
+        div.descriptionBlock
+            h4 Цели бизнеса
+            span= locals.businessNeeds
+
+    - if (locals.idf0)
+        div.descriptionBlock
+            div.idf0Model
+                div.inputSection
+                    div.note
+                        span= locals.idf0.input
+                    div(style="right:0").arrow.right
+                div.outputSection
+                    div.note
+                        span= locals.idf0.output
+                    div(style="left:0").arrow.right
+                div.controlSection
+                    div.note
+                        span= locals.idf0.control
+                    dev.arrow.bottom
+                div.wrap-cells
+                    div.cell
+                        div.content
+                            span= locals.idf0.funcName
+                div.mechanismSection
+                    div.note
+                        span= locals.idf0.mechanism
+                    div.arrow.top
+
+    - if (locals.advantages)
+        div.descriptionBlock
+            h4 Преимущества
+            ul
+                - each item in locals.advantages
+                    li= item
+
+    - if (locals.disadvantages)
+        div.descriptionBlock
+            h4 Недостатки
+            ul
+                - each item in locals.disadvantages
+                    li= item
+
+
+a.btn-close
+    svg(viewBox="0 0 24 24")
+        path(d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z")

@@ -1,0 +1,8 @@
+nav.page-nav
+    ul
+        - each val, index in locals
+            li
+                - if (index == 'index')
+                    a.active(data-page=index)= val.pageName
+                - else
+                    a(data-page=index)= val.pageName

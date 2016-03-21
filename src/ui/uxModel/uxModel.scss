@@ -1,0 +1,109 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700&subset=latin,cyrillic);
+
+@import "./globalColor.scss";
+
+
+
+.uxModel-title {
+  position: relative;
+
+  @import "./cellDescription/cell-logo";
+}
+
+.wrap-uxModel {
+  position: relative;
+  top: 50%;
+  width: 100%;
+  //border-top: 1px solid #333;
+  //border-bottom: 1px solid #333;
+  transform: translateY(-50%);
+
+  .uxModel {
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    //border-top: 1px solid #333;
+    //border-bottom: 1px solid #333;
+
+    .mainLine {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 14px;
+      margin-top: -7px;
+      background: linear-gradient(90deg, #9e9e9e 50%,#bbbbbb 50%);
+      background-size: 0.2em;
+      //transform: translate(0, -50%);
+    }
+
+    .modelSection {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      width: 16.66%;
+      //border-right: 1px solid #333333;
+    }
+
+    @import "./cell.scss";
+  }
+
+  .uxModel-description {
+    position: relative;
+    width: 100%;
+    padding-top: 100px;
+
+    .descriptionSection {
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      width: 16.66%;
+      min-height: 100px;
+
+      .head {
+        position: relative;
+        width: 100%;
+        height: 44px;
+        line-height: 38px;
+        font-size: 0.9em;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        border-bottom: 2px solid #888888;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 2px;
+          height: 100%;
+          background-color: #888888;
+        }
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          line-height: 1.25;
+        }
+      }
+
+      &:last-child .head::before {
+        width: 0;
+      }
+
+      .body {
+        position: relative;
+        width: 90%;
+        margin: 10px auto;
+        line-height: 1.25;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
