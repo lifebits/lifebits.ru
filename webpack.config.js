@@ -2,7 +2,8 @@
 
 const webpack = require('webpack');
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin"),
+const ExtractTextPlugin = require('extract-text-webpack-plugin'),
+      UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
       path = require('path');
 
 const APP = path.join(__dirname, '/src');
@@ -23,22 +24,50 @@ module.exports = {
     },
 
     module: {
-        loaders : [
-            { test: /\.js$/, loader: 'babel', exclude: [/node_modules/] },
-            { test: /\.jade$/, loader: "jade" },
-            { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap') },
-            { test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/, loader: 'file?name=[path][name].[ext]?[hash]' }
+        rules : [
+            { 
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
+                }
+            },
+            {
+                test: /\.jade$/,
+                use: {
+                    loader: "jade-loader"
+                }
+            },
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: true || {/* CSSNano Options */ }
+                            }
+                        },
+                        'sass-loader?sourceMap'
+                    ]
+                })
+            },
+            {
+                test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
+                use: 'file-loader?name=[path][name].[ext]?[hash]'
+            }
         ]
     },
 
     plugins: [
-        //new ExtractTextPlugin("style.css"),
         new ExtractTextPlugin('./css/[name].css'),
-        new webpack.optimize.UglifyJsPlugin({
+        new UglifyJsPlugin({
             compress: {
-                warnings:     false,
-                drop_console: true,
-                unsafe:       true
+                warnings: false
             }
         })
     ],
@@ -47,7 +76,7 @@ module.exports = {
 
     devServer: {
         contentBase: __dirname + '/public',
-        host: '0.0.0.0',
+        //host: '0.0.0.0',
         port: 8080,
         hot: true
     }
